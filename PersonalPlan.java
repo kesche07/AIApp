@@ -25,10 +25,7 @@ public class PersonalPlan extends AIModel
         int usage =  inputTokens + expectedOutputLength;
         
         
-        if (usage > super.getContextWindow()){
-            System.out.println("Error:hm prompt exceeds context window size of tokens");
-        }
-        else if(this.monthlyQuota<= 0){
+        if(this.monthlyQuota<= 0){
             System.out.println("Monthly plan limit has been reached, please buy more prompts or upgrade to Pro Plan");
         }
         else{
