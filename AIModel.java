@@ -4,12 +4,12 @@ public class AIModel
 {
     //instance variables
     private String modelName;
-    private double price;
+    private double price; //price per 1 lakh (100000) tokens
     private int parameterCount;
-    private String contextWindow;
+    private int contextWindow;
     
     //constructor
-    public AIModel(String name, double price, int parameter, String context)
+    public AIModel(String name, double price, int parameter, int context)
     {
         this.modelName=name;
         this.price=price;
@@ -30,7 +30,7 @@ public class AIModel
         return this.parameterCount;
     }
     
-    public String contextWindow(){
+    public int getContextWindow(){
         return this.contextWindow;
     }
     
@@ -47,13 +47,13 @@ public class AIModel
         this.parameterCount=count;
     }
     
-    public void setContextWindow(String context){
+    public void setContextWindow(int context){
         this.contextWindow=context;
     }
     
-    
-    public void displayDetails(){
-        System.out.println("Model Name:"+this.modelName+"\nPrice: "+this.price+"\nParameter count"+this.parameterCount+"\nContext Window: "+this.contextWindow);
+    //displaying details
+    public String displayDetails(){
+        return "Model Name:"+this.modelName+"\nPrice: "+this.price+"\nParameter count"+this.parameterCount+"\nContext Window: "+this.contextWindow;
     }
     
 }

@@ -6,7 +6,7 @@ public class ProPlan extends AIModel
     
     private int maximumSlots;
     
-    public ProPlan(String name, double price, int parameter, String context,int slots)
+    public ProPlan(String name, double price, int parameter, int context,int slots)
     {
         super(name,price,parameter,context);
         this.availableSlots=slots;
@@ -48,8 +48,8 @@ public class ProPlan extends AIModel
     }
     //displaying details
     @Override
-    public void displayDetails(){
-        super.displayDetails();
-        System.out.println("Members: "+this.availableSlots);
+    public String displayDetails(){
+        return super.displayDetails() +
+        "\nMembers: "+this.availableSlots;
     }
 }
