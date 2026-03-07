@@ -51,8 +51,10 @@ public class AIModel
         this.contextWindow=context;
     }
     
+    
     //displaying details
     public String displayDetails(){
+        System.out.println("Model Name:"+this.modelName+"\nPrice: "+this.price+"\nParameter count"+this.parameterCount+"\nContext Window: "+this.contextWindow);
         return "Model Name:"+this.modelName+"\nPrice: "+this.price+"\nParameter count"+this.parameterCount+"\nContext Window: "+this.contextWindow;
     }
     

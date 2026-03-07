@@ -14,7 +14,7 @@ public class ProPlan extends AIModel
     }
 
     //adding teammebers
-    public void addMember(int member){
+    public int addMember(int member){
         if(member<=0){
             System.out.print("Please enter a valid number of members to remove.");
         }
@@ -24,12 +24,13 @@ public class ProPlan extends AIModel
             
         }
         else{
-            System.out.print("The number of slots has exceeded, please remove a member");
+            System.out.print("The number of slots has exceeded, please remove purchase more slots or remove a member.");
         }
+        return this.availableSlots;
     }
     
     //removing member
-    public void removeMember(int member){
+    public int removeMember(int member){
         if(member <=0){
             System.out.print("Please enter a valid number of members to remove.");
         }
@@ -40,11 +41,13 @@ public class ProPlan extends AIModel
         else{
             System.out.println("Maximum Slots is "+this.maximumSlots+ ".\nPlease enter values below it or purchase more slots.");
         }
+        return this.availableSlots;
     }
     
-    public void increaseMax(int slot){
+    public int increaseMax(int slot){
         this.maximumSlots+=slot;
         System.out.println("Succesfully increased maximum slots to "+this.maximumSlots);
+        return this.maximumSlots;
     }
     //displaying details
     @Override

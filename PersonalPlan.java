@@ -38,11 +38,12 @@ public class PersonalPlan extends AIModel
     
     //getter/accessor 
     public int getMonthlyQuota(){
+        System.out.println("Monthly Quota: " +this.monthlyQuota);
         return this.monthlyQuota;
     }
     
     //purchasing prompts
-    public void purchasePrompt(int prompt){
+    public int purchasePrompt(int prompt){
         if(prompt<0){
             System.out.println("Please Enter a Valid Postive Number");
         }
@@ -50,9 +51,9 @@ public class PersonalPlan extends AIModel
             this.monthlyQuota+=prompt;
             System.out.println("Monthly quota has increased to: "+this.monthlyQuota);
         }
+        return this.monthlyQuota;
     }
     
-    @Override
     //display method
     public String displayDetails(){
         return super.displayDetails() +
